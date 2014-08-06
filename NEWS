@@ -1,0 +1,52 @@
+CHANGES IN VERSION 1.1.0
+------------------------
+ o support mz[X]ML format file
+ o add identification-independent metrics
+
+CHANGES IN VERSION 0.99.8
+------------------------
+ o change the head of input design file: mgf -> file
+
+CHANGES IN VERSION 0.99.7
+------------------------
+ o Update unit test
+
+CHANGES IN VERSION 0.99.6
+------------------------
+ o fix: Vignette sources in 'inst/doc' missing from the 'vignettes' directory
+
+CHANGES IN VERSION 0.99.5
+------------------------
+ o fix a bug for qcHist
+ o function "plotFractionIDResult" update
+
+CHANGES IN VERSION 0.99.4
+------------------------
+ o add unit test
+
+CHANGES IN VERSION 0.99.3
+------------------------
+ o Most of the figures re-ploted using ggplot2
+
+CHANGES IN VERSION 0.99.2
+------------------------
+ o package version numbering
+ o format NEWS file
+ o remove README.md file
+ o removed most of the unused commented code
+
+CHANGES IN VERSION 0.99.1
+------------------------
+ o Format the code
+
+CHANGES IN VERSION 0.99.0
+------------------------
+ o updated DESCRIPTION: version, biocViews, VignetteBuilder
+ o initial draft of vignette 
+ o msQCres S3 class and print method
+ o msQCres saved in outdir
+ o reportHTML can take msQCres of MsmqC dir 
+ o new loadmsQCres function 
+ o reduced example data 
+ o using PXD000864 in vignette 
+ o updating NAMESPACE 
