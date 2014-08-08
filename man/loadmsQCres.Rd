@@ -12,7 +12,7 @@ loadmsQCres(outdir)
 Load the result of \code{\link{msQCpipe}}
 }
 \examples{
-zpqc <- system.file("extdata/qc.zip", package = "msQC")
+zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 unzip(zpqc)
 qcres <- loadmsQCres("./qc")
 }

@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.1.1
+------------------------
+ o fix a minor bug
+
 CHANGES IN VERSION 1.1.0
 ------------------------
  o support mz[X]ML format file

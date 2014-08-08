@@ -286,6 +286,7 @@ The results section provides tables and graphics that summerise
   ions.
 \item A summary of the separation efficiency showing the effect of
   accumulating fractions for all samples.
+\item A summary of identification-independent QC metrics.
 \end{itemize} 
 
 

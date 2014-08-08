@@ -89,7 +89,7 @@ set.seed(1)
 mgffiles <- sapply(mgffiles, trimMgf, overwrite = TRUE)
 fas <- pxget(px, "TTE2010.zip")
 fas <- unzip(fas)
-design <- system.file("extdata/PXD000864-design.txt", package = "msQC")
+design <- system.file("extdata/PXD000864-design.txt", package = "proteoQC")
 read.table(design, header = TRUE)
 qcres <- msQCpipe(spectralist = design,
                  fasta = fas,

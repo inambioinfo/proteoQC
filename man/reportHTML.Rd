@@ -15,7 +15,7 @@ null
 HTML format report generator
 }
 \examples{
-zpqc <- system.file("extdata/qc.zip", package = "msQC")
+zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 unzip(zpqc)
 qcres <- loadmsQCres("./qc")
 html <- reportHTML(qcres)

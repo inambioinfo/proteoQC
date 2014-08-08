@@ -14,7 +14,7 @@
 Print the information of msQCres object
 }
 \examples{
-zpqc <- system.file("extdata/qc.zip", package = "msQC")
+zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 unzip(zpqc)
 qcres <- loadmsQCres("./qc")
 print.msQCres(qcres)

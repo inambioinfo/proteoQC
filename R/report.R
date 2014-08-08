@@ -9,7 +9,7 @@
 ##' @export
 ##' @author Bo Wen \email{wenbo@@genomics.cn}
 ##' @examples
-##' zpqc <- system.file("extdata/qc.zip", package = "msQC")
+##' zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 ##' unzip(zpqc)
 ##' qcres <- loadmsQCres("./qc")
 ##' html <- reportHTML(qcres)
@@ -770,7 +770,7 @@ addSummaryChart <- function(res){
 cntStat=function(res){
   
   
-  cnt.map <- read.delim(file=system.file("db/crap.txt",package="msQC"),
+  cnt.map <- read.delim(file=system.file("db/crap.txt",package="proteoQC"),
                         stringsAsFactors=FALSE)
   
   ##

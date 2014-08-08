@@ -1,1 +1,1 @@
-BiocGenerics:::testPackage("msQC")
+BiocGenerics:::testPackage("proteoQC")

@@ -64,7 +64,7 @@
 ##' mgffiles <- sapply(mgffiles, trimMgf, overwrite = TRUE)
 ##' fas <- pxget(px, "TTE2010.zip")
 ##' fas <- unzip(fas)
-##' design <- system.file("extdata/PXD000864-design.txt", package = "msQC")
+##' design <- system.file("extdata/PXD000864-design.txt", package = "proteoQC")
 ##' read.table(design, header = TRUE)
 ##' qcres <- msQCpipe(spectralist = design,
 ##'                  fasta = fas, 
@@ -345,7 +345,7 @@ msQCpipe <- function(spectralist=NULL, fasta="", outdir="./", mode="",
 ##' @author Laurent Gatto \email{lg390@@cam.ac.uk}, 
 ##' Bo Wen \email{wenbo@@genomics.cn}
 ##' @examples 
-##' zpqc <- system.file("extdata/qc.zip", package = "msQC")
+##' zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 ##' unzip(zpqc)
 ##' qcres <- loadmsQCres("./qc")
 loadmsQCres <- function(outdir) {
@@ -365,7 +365,7 @@ loadmsQCres <- function(outdir) {
 ##' Bo Wen \email{wenbo@@genomics.cn}
 ##' @export
 ##' @examples
-##' zpqc <- system.file("extdata/qc.zip", package = "msQC")
+##' zpqc <- system.file("extdata/qc.zip", package = "proteoQC")
 ##' unzip(zpqc)
 ##' qcres <- loadmsQCres("./qc")
 ##' print.msQCres(qcres)
@@ -399,7 +399,7 @@ print.msQCres <- function(x, ...) {
 combineRun <- function(pepFiles,fasta,outPathFile,outdir,prefix){
     cmd_code <- paste("java -cp ",
                       paste('"',system.file("tool/tandemparser.jar", 
-                                            package="msQC"),'"',
+                                            package="proteoQC"),'"',
                             sep="",collapse=""), 
                       " cn.bgi.CombineRun ",
                       paste("\"",pepFiles,"\"",sep="",collapse=""), 
@@ -514,7 +514,7 @@ runTandem=function(spectra="",fasta="",outdir="./",outprefix="",cpu=1,enzyme=1,
   
   tandemparser=paste("java ",paste("-Xmx",xmx,"G",sep="")," -jar ",
                      paste('"',system.file("tool/tandemparser.jar", 
-                                           package="msQC"),'"',
+                                           package="proteoQC"),'"',
                            sep="",collapse=""), 
                      result.path, fasta ,outprefix,outdir,logfile,
                      collapse=" ",sep=" ")
@@ -542,7 +542,7 @@ runTandem=function(spectra="",fasta="",outdir="./",outprefix="",cpu=1,enzyme=1,
 ##' @examples
 ##' showMods()
 showMods=function(){
-  modsdb = read.delim(system.file("config/mods.txt", package="msQC"),
+  modsdb = read.delim(system.file("config/mods.txt", package="proteoQC"),
       header=TRUE,sep="\t",stringsAsFactors=FALSE)
   modsdb
   
@@ -557,7 +557,7 @@ showMods=function(){
 ##' showEnzyme()
 showEnzyme=function(){
   enzymedb = read.delim(system.file("config/enzyme.txt",
-      package="msQC"),header=TRUE,sep="\t",stringsAsFactors=FALSE)
+      package="proteoQC"),header=TRUE,sep="\t",stringsAsFactors=FALSE)
   enzymedb
   
 }
@@ -567,7 +567,7 @@ showEnzyme=function(){
 ##' @return A data frame which contains all of the modifications
 ##' @author Bo Wen \email{wenbo@@genomics.cn}
 getMods=function(){
-  modsdb = read.delim(system.file("config/mods.txt", package="msQC"),
+  modsdb = read.delim(system.file("config/mods.txt", package="proteoQC"),
       header=TRUE,sep="\t",stringsAsFactors=FALSE)
   return(modsdb)
 }
@@ -578,7 +578,7 @@ getMods=function(){
 ##' @author Bo Wen \email{wenbo@@genomics.cn}
 getEnzyme=function(){
   enzymedb = read.delim(system.file("config/enzyme.txt",
-      package="msQC"),header=TRUE,sep="\t",stringsAsFactors=FALSE)
+      package="proteoQC"),header=TRUE,sep="\t",stringsAsFactors=FALSE)
   return(enzymedb)
 }
 
@@ -593,7 +593,7 @@ createTargetDecoyDB=function(fa,outdb){
   
   seq.db  <- read.fasta(file=fa,seqtype="AA")
  
-  seq.cnt <- read.fasta(file=system.file("db/crap.fasta",package="msQC"),
+  seq.cnt <- read.fasta(file=system.file("db/crap.fasta",package="proteoQC"),
                         seqtype="AA")
   ## The id and description may be separated by "\t" 
   seq.db <- lapply(seq.db,function(x){
