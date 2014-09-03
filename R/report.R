@@ -518,7 +518,8 @@ addSummaryChart <- function(res){
     # Missed Tryptic Cleavages, xtandem output bug, 
     # there are many large miss peptide
     tmp.miss <- peps$miss
-    tmp.miss[peps$miss>res$input_parameter$miss] <- res$input_parameter$miss
+    #tmp.miss[peps$miss>res$input_parameter$miss] <- res$input_parameter$miss
+    tmp.miss[peps$miss>res$input_parameter$miss] <- Inf
   
     fig.name <- paste(outdir,"/",prefix,"-miss.png",sep="")
 
