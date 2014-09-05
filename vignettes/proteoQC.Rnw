@@ -184,7 +184,7 @@ read.table(design, header = TRUE)
 \subsection{Running the QC}
 
 We need to load the \Biocpkg{proteoQC} package and call the
-\Rfunction{proteoQCpipe} function, providing appropriate input parameters,
+\Rfunction{msQCpipe} function, providing appropriate input parameters,
 in particular the \texttt{design} file, the \texttt{fasta} protein
 database, the \texttt{outdir} output directory that will contain the
 final quality report and various other peptide spectrum matching
@@ -193,7 +193,7 @@ parameters that will be passed to the \Biocpkg{rTANDEM} package. See
 arguments.
 
 <<run, eval=FALSE, tidy=FALSE>>=
-qcres <- proteoQCpipe(spectralist = design,
+qcres <- msQCpipe(spectralist = design,
                   fasta = fas, 
                   outdir = "./qc",
                   miss  = 0,
@@ -202,7 +202,7 @@ qcres <- proteoQCpipe(spectralist = design,
                   mode = "identification")
 @
 
-The \Rfunction{proteoQCpipe} function will run each mgf input file
+The \Rfunction{msQCpipe} function will run each mgf input file
 documented in the design file and search it agains the fasta database
 using the \Rfunction{tandem} function from the \Biocpkg{rTANDEM}. This
 might take some time depending on the number of files to be searched
