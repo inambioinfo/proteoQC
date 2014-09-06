@@ -77,7 +77,7 @@
 ##' }
 msQCpipe <- function(spectralist=NULL, fasta="", outdir="./", mode="",
                      miss=2, enzyme=1,
-                     varmod=c(2,3,4), fixmod=c(1), ##modification
+                     varmod=NULL, fixmod=NULL, ##modification
                      tol=10, tolu="ppm", itol=0.6, itolu="Daltons", ##mass error
                      threshold=0.01, cpu=0, xmx=2,
                      ...) {    
@@ -440,15 +440,17 @@ combineRun <- function(pepFiles,fasta,outPathFile,outdir,prefix){
 ##' @author Bo Wen \email{wenbo@@genomics.cn}
 ##' @return a file path
 runTandem=function(spectra="",fasta="",outdir="./",outprefix="",cpu=1,enzyme=1,
-                    xmx=2,varmod=2,fixmod=1,
+                    xmx=2,varmod=NULL,fixmod=NULL,
                    tol=10,tolu="ppm",itol=0.6,itolu="Daltons",miss=1){
   ##
   cat(format(Sys.time()),"\n")
   modsdb   = getMods()
   enzymedb = getEnzyme()
   cleavageSite = enzymedb$enzymestring[enzyme]
-  varmods = paste(modsdb$modstring[varmod],collapse=",")
-  fixmods = paste(modsdb$modstring[fixmod],collapse=",")
+  varmods = ifelse(is.null(varmod),"",
+                   paste(modsdb$modstring[varmod],collapse=","))
+  fixmods = ifelse(is.null(fixmod),"",
+                   paste(modsdb$modstring[fixmod],collapse=","))
   #taxonomy=rTTaxo(taxon="msqcfasta",format="peptide",URL=fasta)
   taxonomy=rTTaxo(taxon="msqcfasta",format="peptide",URL=fasta)
   outxmlname=paste(outdir,"/",basename(spectra),"_xtandem.xml",

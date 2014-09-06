@@ -4,7 +4,7 @@
 \title{The main function of msQC pipeline}
 \usage{
 msQCpipe(spectralist = NULL, fasta = "", outdir = "./", mode = "",
-  miss = 2, enzyme = 1, varmod = c(2, 3, 4), fixmod = c(1), tol = 10,
+  miss = 2, enzyme = 1, varmod = NULL, fixmod = NULL, tol = 10,
   tolu = "ppm", itol = 0.6, itolu = "Daltons", threshold = 0.01,
   cpu = 0, xmx = 2, ...)
 }

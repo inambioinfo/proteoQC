@@ -4,8 +4,8 @@
 \title{Run X!Tandem}
 \usage{
 runTandem(spectra = "", fasta = "", outdir = "./", outprefix = "",
-  cpu = 1, enzyme = 1, xmx = 2, varmod = 2, fixmod = 1, tol = 10,
-  tolu = "ppm", itol = 0.6, itolu = "Daltons", miss = 1)
+  cpu = 1, enzyme = 1, xmx = 2, varmod = NULL, fixmod = NULL,
+  tol = 10, tolu = "ppm", itol = 0.6, itolu = "Daltons", miss = 1)
 }
 \arguments{
 \item{spectra}{MS/MS peak list file}
