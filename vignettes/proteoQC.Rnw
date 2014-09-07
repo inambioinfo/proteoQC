@@ -189,7 +189,7 @@ in particular the \texttt{design} file, the \texttt{fasta} protein
 database, the \texttt{outdir} output directory that will contain the
 final quality report and various other peptide spectrum matching
 parameters that will be passed to the \Biocpkg{rTANDEM} package. See
-\Rfunction{?proteoQCpipe} for a more in-depth description of all its
+\Rfunction{?msQCpipe} for a more in-depth description of all its
 arguments.
 
 <<run, eval=FALSE, tidy=FALSE>>=
@@ -227,8 +227,8 @@ print(qcres)
 
 The final quality report can be generated with the
 \Rfunction{reportHTML}, passing the \Robject{qcres} object produced by
-the \Rfunction{proteoQCpipe} function above or the directory storing the
-QC data, as defined as parameter to the \Rfunction{proteoQCpipe}.
+the \Rfunction{msQCpipe} function above or the directory storing the
+QC data, as defined as parameter to the \Rfunction{msQCpipe}.
 
 <<rep1, message = FALSE>>=
 html <- reportHTML(qcres)
@@ -259,7 +259,7 @@ The report can then be opened by opening the
 The dynamic html report is composed of 3 sections: an introduction, a
 methods and data section and a result part. The former are purely
 descriptive and summerise the design matrix and analysis parameters,
-as passed to \Rfunction{proteoQCpipe}.
+as passed to \Rfunction{msQCpipe}.
 
 The respective sections and sub-sections can be expanded and collapsed
 and each figure in the report can be zoomed in. While the dynamic html
