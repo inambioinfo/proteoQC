@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.1.5
+------------------------
+ o add function "chargeStat"
+
 CHANGES IN VERSION 1.1.4
 ------------------------
  o fix several typos in vignette

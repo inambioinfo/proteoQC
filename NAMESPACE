@@ -1,3 +1,7 @@
+
+useDynLib(proteoQC)
+importFrom(Rcpp, evalCpp)
+
 import(XML)
 import(parallel)
 importFrom(ggplot2, aes, aes_string, element_text, facet_grid,
@@ -25,3 +29,4 @@ export(showEnzyme)
 export(showMods)
 export(print.msQCres,loadmsQCres)
 export(calcMSQCMetrics)
+export(chargeStat)
