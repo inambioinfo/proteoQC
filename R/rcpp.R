@@ -12,6 +12,7 @@
 chargeStat=function(mgf=NULL){
   result <- .Call('ChargeCount_Cpp', PACKAGE = 'proteoQC', mgf)
   charge <- unlist(result)
+  names(charge) <- gsub(pattern = "\\+.*$",replacement = "",x=names(charge))
   return(charge);
 }
 

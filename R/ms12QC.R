@@ -3,9 +3,10 @@
 ##' @description Calculate the MS1 level QC metrics
 ##' @param spectraList An experiment design input file
 ##' @param outdir Output directory
-##' @param cpu Number of cpu used
-##' @author Bo Wen \email{wenbo@@genomics.cn}
+##' @param cpu The number of cpu used
+##' @return A data frame 
 ##' @export
+##' @author Bo Wen \email{wenbo@@genomics.cn}
 calcMSQCMetrics=function(spectraList=NULL,cpu=2,outdir="./"){
   
   #library("Rcpp")
@@ -245,17 +246,6 @@ plotMS2boxplot=function(x, fig="test.png"){
   dev.off()
 }
 
-
-# plotMS2PeaksCount=function(x, fig="test.png"){
-#   x$MS1QC <- as.character(x$MS1QC)
-#   x$MS2QC <- as.character(x$MS2QC)
-#   p <- plyr::ddply(x,.(sample,bioRep,techRep,fraction),
-#                    summarise,
-#                    y = read.delim(MS2QC)$peaks.count,
-#                    x= read.delim(MS2QC)$retention.time/60)
-#   p <- p[order(p$x),]
-#   ggplot.RT(p,fig=fig,xlab="Peaks count",ylab="TIC")
-# }
 
 
 ggplot.RT=function(data=NULL,fig=NULL,xlab=NULL,ylab=NULL){
