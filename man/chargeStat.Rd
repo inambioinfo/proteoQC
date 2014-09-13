@@ -9,7 +9,7 @@ chargeStat(mgf = NULL)
 \item{mgf}{A file of mgf.}
 }
 \value{
-A List object
+A vector object
 }
 \description{
 Read the charge information from mgf file
