@@ -46,7 +46,7 @@ summarised and compiled into an interactive html report using the
 
 \section{Example data}\label{sec:data} 
 
-We are going to use parst a dataset from the ProteomeXchange
+We are going to use parts a dataset from the ProteomeXchange
 repository (\url{http://www.proteomexchange.org/}). We will use the
 \Biocpkg{rpx} package to accessed and downloaded the data.
 
@@ -102,7 +102,7 @@ library("R.utils")
 mgffiles <- sapply(mgffiles, gunzip)
 @
 
-To reduce the file size of the demonstartion data included for this
+To reduce the file size of the demonstration data included for this
 package, we have trimmed the peak lists to 1/10 of the original number
 of spectra. All the details are provided in the vignette source.
 
@@ -205,7 +205,7 @@ qcres <- msQCpipe(spectralist = design,
 @
 
 The \Rfunction{msQCpipe} function will run each mgf input file
-documented in the design file and search it agains the fasta database
+documented in the design file and search it against the fasta database
 using the \Rfunction{tandem} function from the \Biocpkg{rTANDEM}. This
 might take some time depending on the number of files to be searched
 and the search parameters. The code chunk above takes about 3 minutes
@@ -260,15 +260,15 @@ The report can then be opened by opening the
 
 The dynamic html report is composed of 3 sections: an introduction, a
 methods and data section and a result part. The former are purely
-descriptive and summerise the design matrix and analysis parameters,
+descriptive and summarise the design matrix and analysis parameters,
 as passed to \Rfunction{msQCpipe}.
 
 The respective sections and sub-sections can be expanded and collapsed
 and each figure in the report can be zoomed in. While the dynamic html
-report is mose useful for interactive inspection, it is also possible
+report is most useful for interactive inspection, it is also possible
 to print the complete report for archiving.
 
-The results section provides tables and graphics that summerise 
+The results section provides tables and graphics that summarise 
 
 \begin{itemize}
 \item Summaries of identification results for individual files as well

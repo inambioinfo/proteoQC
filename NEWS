@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.1.10
+-------------------------
+ o fixed typos in vignette 
+
 CHANGES IN VERSION 1.1.9
 ------------------------
  o add function "proteinGroup"
