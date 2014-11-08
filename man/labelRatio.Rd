@@ -3,7 +3,7 @@
 \alias{labelRatio}
 \title{Calculate the labeling efficiency of isobaric labeling data}
 \usage{
-labelRatio(ms = NULL, iClass = 1, delta = 0.05)
+labelRatio(ms = NULL, iClass = 1, delta = 0.05, plot = TRUE)
 }
 \arguments{
 \item{ms}{MS/MS file.}
@@ -11,6 +11,8 @@ labelRatio(ms = NULL, iClass = 1, delta = 0.05)
 \item{iClass}{Isobaric tag class, 1=iTRAQ-8plex.}
 
 \item{delta}{The mass error for reporter matching.}
+
+\item{plot}{Logical value}
 }
 \value{
 A vector object

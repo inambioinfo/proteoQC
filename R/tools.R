@@ -32,3 +32,61 @@ proteinGroup=function(file=NULL,db="",pepColName="peptide",
   outfile=system(command=pgbin,intern=TRUE)
   cat(outfile,"\n")    
 }
+
+
+
+##' @title Charge distribution
+##' @description Read the charge information from mgf file
+##' @param mgf A file of mgf.
+##' @return A vector object
+##' @export
+##' @author Bo Wen \email{wenbo@@genomics.cn}
+##' @examples
+##' mgf.zip <- system.file("extdata/mgf.zip", package = "proteoQC")
+##' unzip(mgf.zip)
+##' charge <- chargeStat("test.mgf")
+chargeStat=function(mgf=NULL){
+  result <- .Call('ChargeCount_Cpp', PACKAGE = 'proteoQC', mgf)
+  charge <- unlist(result)
+  names(charge) <- gsub(pattern = "\\+.*$",replacement = "",x=names(charge))
+  return(charge);
+}
+
+##' @title Calculate the labeling efficiency of isobaric labeling data 
+##' @description Calculate the labeling efficiency of isobaric labeling data
+##' @param ms MS/MS file.
+##' @param iClass Isobaric tag class, 1=iTRAQ-8plex.
+##' @param delta The mass error for reporter matching.
+##' @param plot Logical value
+##' @return A vector object
+##' @export
+##' @author Bo Wen \email{wenbo@@genomics.cn}
+##' @examples
+##' mgf.zip <- system.file("extdata/mgf.zip", package = "proteoQC")
+##' unzip(mgf.zip)
+##' a <- labelRatio("test.mgf")
+labelRatio=function(ms=NULL,iClass=1,delta=0.05,plot=TRUE){
+  result <- .Call('LableRatio_Cpp', PACKAGE = 'proteoQC', ms,iClass,delta)
+  result <- unlist(result)
+  
+  if(plot){
+    label.names <- NULL
+    if(iClass==1){
+      label.names <- paste("I",c(113:119,121),sep="")
+    }
+    label.names <- c(label.names,"none")
+    dat <- sapply(label.names,function(x){
+      sum(result[grep(pattern = x,x = names(result))])})
+    dat <- data.frame(x=dat/sum(result),label=names(dat))
+    dat$ratio <- sprintf("%.2f%%",dat$x*100)
+    p <- ggplot(data = dat, aes(x=label,y=x, fill=label))+
+      geom_bar(stat="identity",width=.5)+
+      xlab("Isobaric Tag")+
+      ylab("Ratio of labeling")+
+      theme(legend.position = "none")+
+      geom_text(mapping = aes(label=ratio),vjust=-0.8,size=5)
+    print(p)
+  }
+  
+  return(result);
+}

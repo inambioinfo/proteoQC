@@ -292,6 +292,36 @@ The results section provides tables and graphics that summarise
 \end{itemize} 
 
 
+\section{Some useful functions}
+
+\subsection{Protein inference}
+Protein inference from peptide identifications in shotgun proteomics is a very 
+important task. We provide a function \Rfunction{proteinGroup} for this purpose.
+This function is based on the method used in our another package 
+\Biocpkg{sapFinder} \cite{wen2014sapfinder}. You can use the function as below:
+
+<<pg,fig.width=6,fig.height=4>>=
+pep.zip <- system.file("extdata/pep.zip", package = "proteoQC")
+unzip(pep.zip)
+proteinGroup(file = "pep.txt", outfile = "pg.txt")
+@
+
+
+
+\subsection{Isobaric tagging reagent labeling efficiency}
+The labeling efficiency of the isobaric tag reagents to peptides, such as iTRAQ
+and TMT, is a very important experiment quality metrics. We provide a function
+\Rfunction{labelRatio} to calculate this metrics. You can use the function 
+as below:
+
+<<labelRatio>>=
+mgf.zip <- system.file("extdata/mgf.zip", package = "proteoQC")
+unzip(mgf.zip)
+a <- labelRatio("test.mgf")
+@
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Section
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
