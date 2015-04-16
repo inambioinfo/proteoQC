@@ -1,0 +1,11 @@
+index	modstring	name
+1	57.021464@C	Carbamidomethyl (C)
+2	15.994915@M	Oxidation (M)
+3	0.984016@N	Deamidated (N)
+4	0.984016@Q	Deamidated (Q)
+5	304.205360@K	iTRAQ8plex (K)
+6	304.205360@[	iTRAQ8plex (N-term)
+7	304.205360@Y	iTRAQ8plex (Y)
+8	144.102063@K	iTRAQ4plex (K)
+9	144.102063@[	iTRAQ4plex (N-term)
+10	144.102063@Y	iTRAQ4plex (Y)
