@@ -8,7 +8,7 @@
 ##' @param spectrumColName The column name of spectrum index.
 ##' @param proSep The separator of protein ID, default is "".
 ##' @param outfile The output file name of protein group result.
-##' @param xmx JAVA -Xmx, default is 1.
+##' @param xmx JAVA -Xm
 ##' @return NULL
 ##' @export
 ##' @author Bo Wen \email{wenbo@@genomics.cn}

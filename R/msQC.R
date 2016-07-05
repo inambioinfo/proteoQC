@@ -1,10 +1,9 @@
 
 ##' @title The main function of msQC pipeline
 ##'
-##' @description This function is designed to automate 
-##' generating of target-decoy database, 
-##' database searcing and post-processing.
-##'
+##' @description This function is designed to automate generating of 
+##' target-decoy database, database searcing, post-processing and report 
+##' generation.
 ##' @param spectralist A file contains the experiment design
 ##' @param fasta database file, must contain decoy sequences
 ##' @param outdir output directory
@@ -73,7 +72,6 @@
 ##'                  enzyme = 1, varmod = 2, fixmod = 1,
 ##'                  tol = 10, itol = 0.6, cpu = 2,
 ##'                  mode = "identification")
-##' html <- reportHTML(qcres)
 ##' }
 msQCpipe <- function(spectralist=NULL, fasta="", outdir="./", mode="",
                      miss=2, enzyme=1,
@@ -335,6 +333,7 @@ msQCpipe <- function(spectralist=NULL, fasta="", outdir="./", mode="",
   ## make it an S3 for pretty printing
   class(res) <- c("list", "msQCres")
   saveRDS(res, file = file.path(outdir, "msQC.rds"))
+  reportHTML(res)
   return(res)  
 }
 

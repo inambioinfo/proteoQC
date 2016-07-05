@@ -407,7 +407,7 @@ qcHist<-function(p,f,xlab=NA){
                               size=bioRep,colour=sample)) +
     #geom_density(size=0.6)+
     geom_density()+
-    geom_vline(aes(x=0),alpha=0.3,size=1.2)+
+    geom_vline(aes(xintercept=0),alpha=0.3,size=1.2)+
     theme(axis.text.x  = element_text(size=6,angle=90,vjust=0.5))+
     theme(axis.text.y  = element_text(size=6))+
     facet_wrap( ~ fraction, ncol = 6)+
